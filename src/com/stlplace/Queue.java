@@ -22,7 +22,10 @@ public class Queue {
     		}
     	}
     	*/
-    	customerArrvialTime.remove(0);
+    	if(customerArrvialTime.size() > 0)
+    	{
+    		customerArrvialTime.remove(0);
+    	}
     }
     
     public void printQueue()
@@ -37,5 +40,15 @@ public class Queue {
     public int lengthOfQueue()
     {
     	return customerArrvialTime.size();
+    }
+    
+    public int peek()
+    {
+        if( customerArrvialTime.size() > 0 )
+        {
+        	return customerArrvialTime.get(0);
+        }
+        
+        return -1;
     }
 }
