@@ -57,11 +57,11 @@ public class QueueSimulationApp {
         // teller transaction time: 0 means ready to serve, it's a number between 1 and 12 when a person enQueue (evenly distributed), 
         // and reduce by 1 for each tick
 	    // how to track server/teller, their transaction time?
-	    int[] server = new int[4];
-	    server[0]=0;
-	    server[1]=0;
-	    server[2]=0;
-	    server[3]=0;
+	    int[] server = new int[numberOfQueue];
+	    for(int ii=0; ii<numberOfQueue; ii++)
+	    {
+	        server[ii]=0;
+	    }
 	    
 	    int max_wait_time = 0;
 	    int total_wait_time = 0;
@@ -178,6 +178,25 @@ public class QueueSimulationApp {
         } // end of loop (tick)
 	    // Distribution of 0 and 1 (no customer; a customer arrives at each tick)
 	    //System.out.println(test.toString());
+	    /*
+	     * this works
+
+The number of queue/server pairs:
+8
+8
+The probability that a customer arrives in one tick (%):
+80
+80
+The maximum duration of a transaction in ticks:
+4
+4
+  1    2 1 
+       0 
+       0 
+       0 
+       Exception in thread "main" java.lang.ArrayIndexOutOfBoundsException: 4
+	at com.stlplace.QueueSimulationApp.main(QueueSimulationApp.java:174)
+	     */
         
 	    // stats
 	    System.out.println(total_dequeued + " customers waited an average of " + (double)(total_wait_time/total_dequeued) + " ticks.");
