@@ -6,6 +6,18 @@ import java.io.InputStreamReader;
 import java.util.ArrayList;
 import java.util.HashMap;
 
+/*
+ * Enter these parameters of the simulation:
+The number of queue/server pairs:
+4
+4
+The probability that a customer arrives in one tick (%):
+80
+80
+The maximum duration of a transaction in ticks:
+12
+12
+ */
 
 public class QueueSimulationApp {
 
