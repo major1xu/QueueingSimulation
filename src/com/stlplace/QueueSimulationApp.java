@@ -38,6 +38,10 @@ public class QueueSimulationApp {
         
         System.out.println("The maximum duration of a transaction in ticks:");
         int maxDurationOfATransaction = Integer.parseInt(consoleInput());
+        
+        // The duration of the simulation in ticks:
+        System.out.println("The duration of simulation in ticks:");
+        int durationOfSimulation = Integer.parseInt(consoleInput());
 
         // the following seed number is no longer needed as I have the class for distribute random number
 //        System.out.println("Enter a random number seed:");
@@ -66,7 +70,8 @@ public class QueueSimulationApp {
 	    int max_wait_time = 0;
 	    int total_wait_time = 0;
 	    int total_dequeued = 0;
-	    for(tick=1; tick<=120; tick++)
+	    // TBD: it seems we cannot hard code 120 for durationOfSimulation here, it should be an input from command line
+	    for(tick=1; tick<=durationOfSimulation; tick++)
         {
 	        int random = drng.getDistributedRandomNumber();
 
