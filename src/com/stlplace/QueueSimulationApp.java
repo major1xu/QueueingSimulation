@@ -70,7 +70,7 @@ public class QueueSimulationApp {
 	    int max_wait_time = 0;
 	    int total_wait_time = 0;
 	    int total_dequeued = 0;
-	    // TBD: it seems we cannot hard code 120 for durationOfSimulation here, it should be an input from command line
+	    // We cannot hard code 120 for durationOfSimulation here, it should be an input from command line
 	    for(tick=1; tick<=durationOfSimulation; tick++)
         {
 	        int random = drng.getDistributedRandomNumber();

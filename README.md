@@ -1,7 +1,10 @@
+Link to the project was here (I have not checked recently 05-Nov-2018)
+
 http://web.stcloudstate.edu/bajulstrom/cs301/projects/p6f13a.html
 
 TITLE
 QUEUEING SIMULATION
+
 INTRODUCTION
 A queue is a sequence of elements, all of the same type, to which elements can be appended at one end (the rear of the queue) and from which elements can be removed at the other end (the front). Queues are first-in-first-out (FIFO) structures that mimic the behavior of such systems as people in lines, cars at traffic lights, and files to be printed.
 Systems that involve queues are called queueing systems. In general, a queueing system consists of one or more queues of elements waiting to be served by one or more servers. When an element is removed from the front of a queue, a server serves that element. How queues and servers interact and parameters such as the numbers of queues and servers, how often new elements arrive, and how often servers remove elements from queues determine the behavior of a queueing system.
@@ -21,14 +24,17 @@ the probability that a customer will arrive in a single tick (a percentage, thus
 the longest time a transaction may take, a positive integer;
 the duration of the simulation in ticks, at least 1; and
 an integer seed value for the pseudo-random number generator.
+
 OUTPUT
 The program's output, directed to the terminal, will be a snapshot of the system at each clock tick during the simulation, followed by these statistics:
 the number of customers served,
 the average time (number of ticks) the customers who were served waited,
 the longest time any one customer waited, and
 the number of customers left in queues when the simulation terminated.
+
 ERRORS
 The program may assume that the input values are as described above; it need not detect any errors.
+
 EXAMPLE
 Below is an abbreviated script of a run of such a program. Each block of output lists the clock value, the times remaining in each teller's current transaction, and the arrival times of the customers waiting in the lines. For the first few ticks, each arriving customer is served immediately; these customers join queues but are dequeued without waiting.
 Note that even with the same input values, your program will almost certainly produce different results, since a psuedo-random number generator's values can generally be used in several ways to get the effects we desire. Examples like this one are intended to show what the program's output might look like, NOT to provide a standard to determine the correctness of your code. Your tests and examples must be different.
@@ -83,6 +89,7 @@ Declare the arrays of queues and of teller times after the program has read in t
 
 HINTS
 Consider a function that returns the index of the "shortest" line; it will examine both the lengths of the queues and the remaining transaction times. Consider also a function that returns the total length of all the queues.
+
 WHAT TO HAND IN
 See About Programming Assignments for a description of what to hand in: design document, user document, code, tests, and summary.
 Use runs of your program to answer this question: If the probability that a customer arrives during one tick is 0.60, and the maximum transaction time is fifteen ticks, what is the smallest number of lines and tellers the system can have and usually keep the average time customers wait below ten ticks? Consider simulations at least 100 ticks long, and explain how you arrived at your conclusion.
